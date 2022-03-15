@@ -19,21 +19,21 @@ cp $BUILD_PREFIX/share/gnuconfig/config.* ./CoinUtils
 
 set -e
 
-LIBS="-lCoinUtils -lOsi -lCgl" COIN_SKIP_PROJECTS="Sample" ./configure --prefix="${PREFIX}" \
-  --with-coinutils-lib="$(pkg-config --libs coinutils)" \
+LIBS="-lCoinUtils -lOsi -lCgl -lCbc -lipopt -lasl" COIN_SKIP_PROJECTS="Sample" ./configure --prefix="${PREFIX}" \
+  --with-coinutils-lib="-lCoinUtils" \
   --with-coinutils-incdir="${PREFIX}/include/coin/" \
-  --with-osi-lib="$(pkg-config --libs osi)" \
+  --with-osi-lib="-lOsi" \
   --with-osi-incdir="${PREFIX}/include/coin/" \
-  --with-clp-lib="$(pkg-config --libs clp)" \
+  --with-clp-lib="-lClp" \
   --with-clp-incdir="${PREFIX}/include/coin/" \
-  --with-cgl-lib="$(pkg-config --libs cgl)" \
+  --with-cgl-lib="-lCgl" \
   --with-cgl-incdir="${PREFIX}/include/coin/" \
-  --with-cbc-lib="$(pkg-config --libs cbc)" \
+  --with-cbc-lib="-lCbc" \
   --with-cbc-incdir="${PREFIX}/include/coin/" \
-  --with-ipopt-lib="$(pkg-config --libs ipopt)" \
+  --with-ipopt-lib="-lipopt" \
   --with-ipopt-incdir="${PREFIX}/include/coin/" \
   --with-asl-incdir="${PREFIX}/include/asl" \
-  --with-asl-lib="$(pkg-config --libs ipoptamplinterface) -lasl" \
+  --with-asl-lib="-lipoptamplinterface -lasl" \
   || { cat config.log; exit 1; }
 make -j ${CPU_COUNT}
 make install
