@@ -1,3 +1,21 @@
+# Get an updated config.sub and config.guess
+cp $BUILD_PREFIX/share/gnuconfig/config.* ./Osi
+cp $BUILD_PREFIX/share/gnuconfig/config.* ./ThirdParty/HSL
+cp $BUILD_PREFIX/share/gnuconfig/config.* ./ThirdParty/ASL
+cp $BUILD_PREFIX/share/gnuconfig/config.* ./ThirdParty/Mumps
+cp $BUILD_PREFIX/share/gnuconfig/config.* ./ThirdParty/Blas
+cp $BUILD_PREFIX/share/gnuconfig/config.* ./Bonmin
+cp $BUILD_PREFIX/share/gnuconfig/config.* ./Cgl
+cp $BUILD_PREFIX/share/gnuconfig/config.* ./Ipopt
+cp $BUILD_PREFIX/share/gnuconfig/config.* ./Cbc
+cp $BUILD_PREFIX/share/gnuconfig/config.* ./Clp
+cp $BUILD_PREFIX/share/gnuconfig/config.* ./ThirdParty/Lapack
+cp $BUILD_PREFIX/share/gnuconfig/config.* ./BuildTools
+cp $BUILD_PREFIX/share/gnuconfig/config.* ./Data/Sample
+cp $BUILD_PREFIX/share/gnuconfig/config.* .
+cp $BUILD_PREFIX/share/gnuconfig/config.* ./ThirdParty/Metis
+cp $BUILD_PREFIX/share/gnuconfig/config.* ./ThirdParty/FilterSQP
+cp $BUILD_PREFIX/share/gnuconfig/config.* ./CoinUtils
 
 set -e
 
